@@ -1,0 +1,140 @@
+{
+  "test_accuracy": 0.8695,
+  "top_1_accuracy": 0.8695,
+  "macro_f1": 0.7622049636894931,
+  "weighted_f1": 0.8932878316819356,
+  "top_3_accuracy": 0.9115,
+  "class_wise": {
+    "Compost": {
+      "precision": 0.9506172839506173,
+      "recall": 0.7738693467336684,
+      "f1-score": 0.853185595567867,
+      "support": 199.0
+    },
+    "DAP": {
+      "precision": 1.0,
+      "recall": 0.9195205479452054,
+      "f1-score": 0.9580731489741302,
+      "support": 584.0
+    },
+    "MOP": {
+      "precision": 1.0,
+      "recall": 0.8297872340425532,
+      "f1-score": 0.9069767441860465,
+      "support": 282.0
+    },
+    "NPK": {
+      "precision": 0.7777777777777778,
+      "recall": 0.7109375,
+      "f1-score": 0.7428571428571429,
+      "support": 128.0
+    },
+    "SSP": {
+      "precision": 0.15483870967741936,
+      "recall": 0.6486486486486487,
+      "f1-score": 0.25,
+      "support": 37.0
+    },
+    "Urea": {
+      "precision": 1.0,
+      "recall": 0.932258064516129,
+      "f1-score": 0.9649415692821369,
+      "support": 620.0
+    },
+    "Zinc Sulphate": {
+      "precision": 0.5576036866359447,
+      "recall": 0.8066666666666666,
+      "f1-score": 0.659400544959128,
+      "support": 150.0
+    },
+    "accuracy": 0.8695,
+    "macro avg": {
+      "precision": 0.7772624940059656,
+      "recall": 0.8030982869361244,
+      "f1-score": 0.7622049636894931,
+      "support": 2000.0
+    },
+    "weighted avg": {
+      "precision": 0.9320489901575923,
+      "recall": 0.8695,
+      "f1-score": 0.8932878316819356,
+      "support": 2000.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      154,
+      0,
+      0,
+      4,
+      26,
+      0,
+      15
+    ],
+    [
+      1,
+      537,
+      0,
+      6,
+      21,
+      0,
+      19
+    ],
+    [
+      3,
+      0,
+      234,
+      8,
+      20,
+      0,
+      17
+    ],
+    [
+      0,
+      0,
+      0,
+      91,
+      22,
+      0,
+      15
+    ],
+    [
+      0,
+      0,
+      0,
+      3,
+      24,
+      0,
+      10
+    ],
+    [
+      3,
+      0,
+      0,
+      1,
+      18,
+      578,
+      20
+    ],
+    [
+      1,
+      0,
+      0,
+      4,
+      24,
+      0,
+      121
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "Compost",
+    "DAP",
+    "MOP",
+    "NPK",
+    "SSP",
+    "Urea",
+    "Zinc Sulphate"
+  ],
+  "specialist_path_used_count": 125,
+  "confusion_gate_triggered_count": 137
+}

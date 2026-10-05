@@ -1,0 +1,50 @@
+{
+  "Soil_Type": [
+    "Clay",
+    "Loamy",
+    "Sandy",
+    "Silt"
+  ],
+  "Crop_Type": [
+    "Cotton",
+    "Maize",
+    "Potato",
+    "Rice",
+    "Sugarcane",
+    "Tomato",
+    "Wheat"
+  ],
+  "Crop_Growth_Stage": [
+    "Flowering",
+    "Harvest",
+    "Sowing",
+    "Vegetative"
+  ],
+  "Season": [
+    "Kharif",
+    "Rabi",
+    "Zaid"
+  ],
+  "Irrigation_Type": [
+    "Canal",
+    "Drip",
+    "Rainfed",
+    "Sprinkler"
+  ],
+  "Previous_Crop": [
+    "Cotton",
+    "Maize",
+    "Potato",
+    "Rice",
+    "Sugarcane",
+    "Tomato",
+    "Wheat"
+  ],
+  "Region": [
+    "Central",
+    "East",
+    "North",
+    "South",
+    "West"
+  ]
+}

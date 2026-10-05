@@ -1,0 +1,353 @@
+{
+  "model_name": "NEUTRA-BOOST",
+  "implementation_source": "supplied final-notebook (1).ipynb; custom NeutraBoost class",
+  "dataset_filename": "fertilizer_recommendation.csv",
+  "dataset_sha256": "d491acfa026318dcc1336faacf8c190d154c6d1aa4d595e0b463b39229e80c8e",
+  "samples": 10000,
+  "target_column": "Recommended_Fertilizer",
+  "feature_order": [
+    "Soil_Type",
+    "Soil_pH",
+    "Soil_Moisture",
+    "Organic_Carbon",
+    "Electrical_Conductivity",
+    "Nitrogen_Level",
+    "Phosphorus_Level",
+    "Potassium_Level",
+    "Temperature",
+    "Humidity",
+    "Rainfall",
+    "Crop_Type",
+    "Crop_Growth_Stage",
+    "Season",
+    "Irrigation_Type",
+    "Previous_Crop",
+    "Region",
+    "Fertilizer_Used_Last_Season",
+    "Yield_Last_Season"
+  ],
+  "categorical_features": [
+    "Soil_Type",
+    "Crop_Type",
+    "Crop_Growth_Stage",
+    "Season",
+    "Irrigation_Type",
+    "Previous_Crop",
+    "Region"
+  ],
+  "numerical_features": [
+    "Soil_pH",
+    "Soil_Moisture",
+    "Organic_Carbon",
+    "Electrical_Conductivity",
+    "Nitrogen_Level",
+    "Phosphorus_Level",
+    "Potassium_Level",
+    "Temperature",
+    "Humidity",
+    "Rainfall",
+    "Fertilizer_Used_Last_Season",
+    "Yield_Last_Season"
+  ],
+  "classes": [
+    "Compost",
+    "DAP",
+    "MOP",
+    "NPK",
+    "SSP",
+    "Urea",
+    "Zinc Sulphate"
+  ],
+  "class_counts": {
+    "Compost": 996,
+    "DAP": 2920,
+    "MOP": 1408,
+    "NPK": 641,
+    "SSP": 182,
+    "Urea": 3101,
+    "Zinc Sulphate": 752
+  },
+  "split": {
+    "method": "stratified train_test_split",
+    "test_size": 0.2,
+    "random_state": 42,
+    "train_samples": 8000,
+    "test_samples": 2000,
+    "train_class_counts": {
+      "Compost": 797,
+      "DAP": 2336,
+      "MOP": 1126,
+      "NPK": 513,
+      "SSP": 145,
+      "Urea": 2481,
+      "Zinc Sulphate": 602
+    },
+    "test_class_counts": {
+      "Compost": 199,
+      "DAP": 584,
+      "MOP": 282,
+      "NPK": 128,
+      "SSP": 37,
+      "Urea": 620,
+      "Zinc Sulphate": 150
+    },
+    "preprocessing_fit_on": "training split only"
+  },
+  "preprocessing": {
+    "categorical_encoding": "one sklearn LabelEncoder per feature, fit only on training split",
+    "categorical_feature_order": [
+      "Soil_Type",
+      "Crop_Type",
+      "Crop_Growth_Stage",
+      "Season",
+      "Irrigation_Type",
+      "Previous_Crop",
+      "Region"
+    ],
+    "numeric_feature_conversion": "float64",
+    "scaler": "StandardScaler fit on encoded training feature matrix; transforms all 19 features",
+    "label_mapping": "LabelEncoder fit only on training target labels"
+  },
+  "model_parameters": {
+    "n_estimators": 60,
+    "base_lr": 0.15,
+    "max_depth": 3,
+    "tau": 0.25,
+    "margin_threshold_gamma": 0.035,
+    "stability_weight_lambda": 0.0,
+    "min_specialist_samples": 100,
+    "specialist_confidence_delta": 0.55,
+    "class_weighting": "mean-normalized log(N / class_count)",
+    "weak_learner": "DecisionTreeRegressor, min_samples_leaf=30, fixed random_state=42",
+    "specialist_learner": "DecisionTreeClassifier, max_depth=3, min_samples_leaf=40, fixed random_state=42",
+    "specialist_pairs": [
+      {
+        "classes": [
+          "Compost",
+          "DAP"
+        ],
+        "encoded_pair": [
+          0,
+          1
+        ],
+        "training_samples": 417
+      },
+      {
+        "classes": [
+          "Compost",
+          "MOP"
+        ],
+        "encoded_pair": [
+          0,
+          2
+        ],
+        "training_samples": 317
+      },
+      {
+        "classes": [
+          "Compost",
+          "NPK"
+        ],
+        "encoded_pair": [
+          0,
+          3
+        ],
+        "training_samples": 305
+      },
+      {
+        "classes": [
+          "Compost",
+          "SSP"
+        ],
+        "encoded_pair": [
+          0,
+          4
+        ],
+        "training_samples": 330
+      },
+      {
+        "classes": [
+          "Compost",
+          "Urea"
+        ],
+        "encoded_pair": [
+          0,
+          5
+        ],
+        "training_samples": 422
+      },
+      {
+        "classes": [
+          "Compost",
+          "Zinc Sulphate"
+        ],
+        "encoded_pair": [
+          0,
+          6
+        ],
+        "training_samples": 224
+      },
+      {
+        "classes": [
+          "DAP",
+          "MOP"
+        ],
+        "encoded_pair": [
+          1,
+          2
+        ],
+        "training_samples": 179
+      },
+      {
+        "classes": [
+          "DAP",
+          "NPK"
+        ],
+        "encoded_pair": [
+          1,
+          3
+        ],
+        "training_samples": 487
+      },
+      {
+        "classes": [
+          "DAP",
+          "SSP"
+        ],
+        "encoded_pair": [
+          1,
+          4
+        ],
+        "training_samples": 688
+      },
+      {
+        "classes": [
+          "DAP",
+          "Zinc Sulphate"
+        ],
+        "encoded_pair": [
+          1,
+          6
+        ],
+        "training_samples": 433
+      },
+      {
+        "classes": [
+          "MOP",
+          "NPK"
+        ],
+        "encoded_pair": [
+          2,
+          3
+        ],
+        "training_samples": 337
+      },
+      {
+        "classes": [
+          "MOP",
+          "SSP"
+        ],
+        "encoded_pair": [
+          2,
+          4
+        ],
+        "training_samples": 228
+      },
+      {
+        "classes": [
+          "MOP",
+          "Urea"
+        ],
+        "encoded_pair": [
+          2,
+          5
+        ],
+        "training_samples": 150
+      },
+      {
+        "classes": [
+          "MOP",
+          "Zinc Sulphate"
+        ],
+        "encoded_pair": [
+          2,
+          6
+        ],
+        "training_samples": 376
+      },
+      {
+        "classes": [
+          "NPK",
+          "SSP"
+        ],
+        "encoded_pair": [
+          3,
+          4
+        ],
+        "training_samples": 248
+      },
+      {
+        "classes": [
+          "NPK",
+          "Urea"
+        ],
+        "encoded_pair": [
+          3,
+          5
+        ],
+        "training_samples": 610
+      },
+      {
+        "classes": [
+          "NPK",
+          "Zinc Sulphate"
+        ],
+        "encoded_pair": [
+          3,
+          6
+        ],
+        "training_samples": 529
+      },
+      {
+        "classes": [
+          "SSP",
+          "Urea"
+        ],
+        "encoded_pair": [
+          4,
+          5
+        ],
+        "training_samples": 679
+      },
+      {
+        "classes": [
+          "SSP",
+          "Zinc Sulphate"
+        ],
+        "encoded_pair": [
+          4,
+          6
+        ],
+        "training_samples": 568
+      },
+      {
+        "classes": [
+          "Urea",
+          "Zinc Sulphate"
+        ],
+        "encoded_pair": [
+          5,
+          6
+        ],
+        "training_samples": 460
+      }
+    ]
+  },
+  "evaluation_method": "single stratified 20% held-out test; notebook hyperparameters fixed, no test-set tuning",
+  "training_seconds": 9.94458239999949,
+  "trained_at_utc": "2026-10-04T17:43:24.359461+00:00",
+  "runtime": {
+    "numpy_version": "2.5.3",
+    "scikit_learn_version": "1.9.1"
+  }
+}
